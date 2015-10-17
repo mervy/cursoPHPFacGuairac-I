@@ -105,4 +105,23 @@ if(true == (array_key_exists($login,$pass2)
 		$msg = " Encontrado: $login";
 	}
 	echo $msg;
+	
+	<?php
+
+$lista = array (
+'claudinei' => array(
+               'senha' => 'minhasenha',
+			   'nome' => 'djasjfjakak',
+			   'idade' => 30,
+			   'email => 'ajdfj@jajdj.com'
+
+),
+'elaine' => array(
+               'senha' => 'minhassssenha',
+			   'nome' => 'djasjfdfafafjakak',
+			   'idade' => 90,
+			   'email => 'ajsssdfj@jajdj.com'
+
+)
+);
 
