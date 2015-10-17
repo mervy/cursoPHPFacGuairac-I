@@ -1,1 +1,108 @@
 
+<?php
+
+ini_set('default_charset','utf-8');
+
+$c = "<h1 style='color:white; background-color: black; padding 30px auto;text-align: center;'>
+CURSO DE EXTENSÃO EM PHP - MÓDULO I</h1>";
+
+echo $c;
+
+$nome = "Rogério";
+$idade = 37;
+$pontos = '58.9';
+
+var_dump(is_float($pontos)).'<br>';
+
+$pontos = (float) $pontos;
+
+var_dump(is_float($pontos));
+
+*************************
+<?php
+
+ini_set('default_charset','utf-8');
+
+$nome = 'Rogério Soares';
+$idade = 37;
+$curso = 'Curso de Extensão em PHP - Módulo I';
+
+print "
+Meu nome é $nome, tenho $idade anos e estou agora iniciando o $curso.
+".'<br>';
+
+$id_esposa = 30;
+$id_filho1 = 9;
+$id_filho2 = 2;
+
+$soma = $id_esposa+$id_filho1+$id_filho2;
+
+echo "A soma das idades de minha esposa e de meus filhos é $soma anos!";
+
+**********************************************
+<?php
+ini_set('default_charset','utf-8');
+
+$users = array('kelly', 'maria', 'felisbirna', 'pafunézia');
+
+$pass = array (
+'maria' => '525s5dfsffs5s5',
+'kelly' => '7sd77&&&&yw7w7788/*',
+'john' => '55*-++5658',
+'helia' => 'ujj/sskSSSER'
+);
+
+$size = count($users);
+for($i=0; $i<$size; $i++){
+	echo $users[$i]."<br />";
+}
+
+echo "<hr />";
+
+foreach ($pass as $user => $pass){
+	echo "Login: $user - Senha: $pass".'<br />';
+}
+
+echo "<hr />";
+
+/*Se usar o array pass, ele é sobrescrito pelo pass
+do foreach anterior, daí renomear para $pass2
+*/
+$pass2 = array (
+'maria' => '525s5dfsffs5s5',
+'kelly' => '7sd77&&&&yw7w7788/*',
+'john' => '55*-++5658',
+'helia' => 'ujj/sskSSSER'
+);
+
+$sizePass = count($pass2);
+
+$keysPass = array_keys($pass2);
+$valuesPass = array_values($pass2);
+
+for($j = 0; $j < $sizePass; $j++){
+	echo "Login: $keysPass[$j] - Senha: $valuesPass[$j]<br>";
+}
+
+echo "<hr />";
+
+$login = 'maria';
+$senha = '525s5dfsffs5s5';
+$msg = "Usuário não encontrado";
+
+
+if(in_array($login, array_keys($pass2)) && in_array($senha, array_values($pass2))){
+	echo "usuario e senha conferem";
+} else {
+	echo $msg;
+}
+
+echo "<hr />";
+$msg = "usuario não encontrado!";
+if(true == (array_key_exists($login,$pass2)
+	&& ($senha == $pass2[$login])))
+	{
+		$msg = " Encontrado: $login";
+	}
+	echo $msg;
+
